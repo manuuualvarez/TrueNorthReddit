@@ -65,3 +65,18 @@ protocol BaseViewModel {
     func viewWillAppear()
     var isLoadingObservable: TrueNorthObservableWhenValueChange<Bool> { get }
 }
+
+class BaseViewModelImplementation: NSObject, BaseViewModel {
+    var isLoadingObservable = TrueNorthObservableWhenValueChange<Bool>(false)
+    
+    func viewWillAppear() {}
+    func viewDidLoad() {}
+    func viewDidAppear() {}
+}
+
+    // MARK: - Base Navigator
+
+class BaseNavigator {
+    weak var view: UIViewController?
+    
+}
