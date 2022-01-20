@@ -9,21 +9,32 @@
 /* Begin PBXBuildFile section */
 		FE16FE87279A1FF30008B0D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE16FE86279A1FF30008B0D1 /* AppDelegate.swift */; };
 		FE16FE89279A1FF30008B0D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE16FE88279A1FF30008B0D1 /* SceneDelegate.swift */; };
-		FE16FE8B279A1FF30008B0D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE16FE8A279A1FF30008B0D1 /* ViewController.swift */; };
 		FE16FE8E279A1FF30008B0D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE16FE8C279A1FF30008B0D1 /* Main.storyboard */; };
 		FE16FE90279A1FF40008B0D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE16FE8F279A1FF40008B0D1 /* Assets.xcassets */; };
 		FE16FE93279A1FF40008B0D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE16FE91279A1FF40008B0D1 /* LaunchScreen.storyboard */; };
+		FEA5B251279A219C00336B2B /* BaseClases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B250279A219C00336B2B /* BaseClases.swift */; };
+		FEA5B253279A21E500336B2B /* Observables.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B252279A21E500336B2B /* Observables.swift */; };
+		FEA5B255279A224F00336B2B /* LoaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B254279A224F00336B2B /* LoaderAnimator.swift */; };
+		FEA5B258279A245400336B2B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FEA5B257279A245400336B2B /* Lottie */; };
+		FEA5B25B279A24E700336B2B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B25A279A24E700336B2B /* UIColor+Extension.swift */; };
+		FEA5B25D279A253C00336B2B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B25C279A253C00336B2B /* UIView+Extension.swift */; };
+		FEA5B25F279A277C00336B2B /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B25E279A277C00336B2B /* UIApplication+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FE16FE83279A1FF30008B0D1 /* TrueNothReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueNothReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE16FE86279A1FF30008B0D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE16FE88279A1FF30008B0D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FE16FE8A279A1FF30008B0D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FE16FE8D279A1FF30008B0D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE16FE8F279A1FF40008B0D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE16FE92279A1FF40008B0D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE16FE94279A1FF40008B0D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEA5B250279A219C00336B2B /* BaseClases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseClases.swift; sourceTree = "<group>"; };
+		FEA5B252279A21E500336B2B /* Observables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observables.swift; sourceTree = "<group>"; };
+		FEA5B254279A224F00336B2B /* LoaderAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderAnimator.swift; sourceTree = "<group>"; };
+		FEA5B25A279A24E700336B2B /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		FEA5B25C279A253C00336B2B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		FEA5B25E279A277C00336B2B /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEA5B258279A245400336B2B /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +68,44 @@
 		FE16FE85279A1FF30008B0D1 /* TrueNothReddit */ = {
 			isa = PBXGroup;
 			children = (
+				FEA5B260279A282100336B2B /* Modules */,
+				FEA5B259279A24CA00336B2B /* Helpers */,
+				FEA5B24F279A218100336B2B /* MVVM */,
 				FE16FE86279A1FF30008B0D1 /* AppDelegate.swift */,
 				FE16FE88279A1FF30008B0D1 /* SceneDelegate.swift */,
-				FE16FE8A279A1FF30008B0D1 /* ViewController.swift */,
 				FE16FE8C279A1FF30008B0D1 /* Main.storyboard */,
 				FE16FE8F279A1FF40008B0D1 /* Assets.xcassets */,
 				FE16FE91279A1FF40008B0D1 /* LaunchScreen.storyboard */,
 				FE16FE94279A1FF40008B0D1 /* Info.plist */,
 			);
 			path = TrueNothReddit;
+			sourceTree = "<group>";
+		};
+		FEA5B24F279A218100336B2B /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				FEA5B250279A219C00336B2B /* BaseClases.swift */,
+				FEA5B252279A21E500336B2B /* Observables.swift */,
+				FEA5B254279A224F00336B2B /* LoaderAnimator.swift */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		FEA5B259279A24CA00336B2B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FEA5B25A279A24E700336B2B /* UIColor+Extension.swift */,
+				FEA5B25C279A253C00336B2B /* UIView+Extension.swift */,
+				FEA5B25E279A277C00336B2B /* UIApplication+Extension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FEA5B260279A282100336B2B /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +124,9 @@
 			dependencies = (
 			);
 			name = TrueNothReddit;
+			packageProductDependencies = (
+				FEA5B257279A245400336B2B /* Lottie */,
+			);
 			productName = TrueNothReddit;
 			productReference = FE16FE83279A1FF30008B0D1 /* TrueNothReddit.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +155,9 @@
 				Base,
 			);
 			mainGroup = FE16FE7A279A1FF30008B0D1;
+			packageReferences = (
+				FEA5B256279A245400336B2B /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = FE16FE84279A1FF30008B0D1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +185,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE16FE8B279A1FF30008B0D1 /* ViewController.swift in Sources */,
+				FEA5B25B279A24E700336B2B /* UIColor+Extension.swift in Sources */,
+				FEA5B253279A21E500336B2B /* Observables.swift in Sources */,
+				FEA5B25D279A253C00336B2B /* UIView+Extension.swift in Sources */,
+				FEA5B25F279A277C00336B2B /* UIApplication+Extension.swift in Sources */,
+				FEA5B251279A219C00336B2B /* BaseClases.swift in Sources */,
 				FE16FE87279A1FF30008B0D1 /* AppDelegate.swift in Sources */,
 				FE16FE89279A1FF30008B0D1 /* SceneDelegate.swift in Sources */,
+				FEA5B255279A224F00336B2B /* LoaderAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +412,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FEA5B256279A245400336B2B /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FEA5B257279A245400336B2B /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEA5B256279A245400336B2B /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FE16FE7B279A1FF30008B0D1 /* Project object */;
 }
