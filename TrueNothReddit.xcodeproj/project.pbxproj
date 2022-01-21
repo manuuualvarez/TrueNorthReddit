@@ -30,7 +30,6 @@
 		FEA5B258279A245400336B2B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FEA5B257279A245400336B2B /* Lottie */; };
 		FEA5B25B279A24E700336B2B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B25A279A24E700336B2B /* UIColor+Extension.swift */; };
 		FEA5B25D279A253C00336B2B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B25C279A253C00336B2B /* UIView+Extension.swift */; };
-		FEA5B25F279A277C00336B2B /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B25E279A277C00336B2B /* UIApplication+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +56,6 @@
 		FEA5B254279A224F00336B2B /* LoaderAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderAnimator.swift; sourceTree = "<group>"; };
 		FEA5B25A279A24E700336B2B /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		FEA5B25C279A253C00336B2B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		FEA5B25E279A277C00336B2B /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +176,6 @@
 				FE13D093279B04F90074A131 /* Lottie */,
 				FEA5B25A279A24E700336B2B /* UIColor+Extension.swift */,
 				FEA5B25C279A253C00336B2B /* UIView+Extension.swift */,
-				FEA5B25E279A277C00336B2B /* UIApplication+Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -281,7 +278,6 @@
 				FE3D0108279A2C4100E4017F /* HomeBuilder.swift in Sources */,
 				FE13D083279AF1270074A131 /* NewsTableViewCell.swift in Sources */,
 				FE13D088279AF40F0074A131 /* RedditServices.swift in Sources */,
-				FEA5B25F279A277C00336B2B /* UIApplication+Extension.swift in Sources */,
 				FE3D0106279A2C4100E4017F /* HomeNavigator.swift in Sources */,
 				FE3D0107279A2C4100E4017F /* HomeViewController.swift in Sources */,
 				FE3D0109279A2C4100E4017F /* HomeViewModel.swift in Sources */,
