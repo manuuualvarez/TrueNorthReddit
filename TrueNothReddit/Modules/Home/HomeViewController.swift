@@ -89,4 +89,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let heightCell = NSString(string: title).boundingRect(with: size, options: .usesLineFragmentOrigin, context: nil)
         return heightCell.height + 160
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if viewModel.tableNewsData.value.count - 3 == indexPath.row {
+            viewModel.getDataFromNextPage()
+        }
+    }
 }
