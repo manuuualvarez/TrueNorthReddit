@@ -95,4 +95,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             viewModel.getDataFromNextPage()
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.goToPost(index: indexPath.row)
+    }
 }

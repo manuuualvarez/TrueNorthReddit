@@ -11,11 +11,12 @@ protocol HomeViewModel: BaseViewModel {
     var tableNewsData: TrueNorthObservable<[Child]> { get }
     func pullToRefres()
     func getDataFromNextPage()
+    func goToPost(index: Int)
 }
 
 
 final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewModel {
-
+    
 //    MARK: Properties
     var navigator: HomeNavigator?
     var tableNewsData: TrueNorthObservable<[Child]> = TrueNorthObservable([])
@@ -73,8 +74,16 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
         } else {
             self.afterPage = ""
         }
-        
     }
     
+//    MARK: Navigation
+    func goToPost(index: Int) {
+        guard let dataUrl = tableNewsData.value[index].data?.name,
+              let components = dataUrl.components(separatedBy: "_").last
+                else { return }
     
+        let url = "https://redd.it/\(components)"
+        self.navigator?.navigate(to: .goToPost(url: url))
+    }
+
 }

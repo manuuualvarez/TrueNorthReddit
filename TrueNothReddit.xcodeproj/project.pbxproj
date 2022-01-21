@@ -32,6 +32,11 @@
 		FEBF2028279B1C1700F153D3 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEBF2026279B1C1700F153D3 /* NewsTableViewCell.xib */; };
 		FEBF202B279B316400F153D3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FEBF202A279B316400F153D3 /* Kingfisher */; };
 		FEBF202D279B3DF700F153D3 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF202C279B3DF700F153D3 /* String+Extension.swift */; };
+		FEBF2034279B4CB600F153D3 /* PostNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF202F279B4CB600F153D3 /* PostNavigator.swift */; };
+		FEBF2035279B4CB600F153D3 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF2030279B4CB600F153D3 /* PostViewController.swift */; };
+		FEBF2036279B4CB600F153D3 /* PostBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF2031279B4CB600F153D3 /* PostBuilder.swift */; };
+		FEBF2037279B4CB600F153D3 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBF2032279B4CB600F153D3 /* PostViewModel.swift */; };
+		FEBF2038279B4CB600F153D3 /* PostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEBF2033279B4CB600F153D3 /* PostViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +64,11 @@
 		FEBF2025279B1C1700F153D3 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		FEBF2026279B1C1700F153D3 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		FEBF202C279B3DF700F153D3 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		FEBF202F279B4CB600F153D3 /* PostNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostNavigator.swift; sourceTree = "<group>"; };
+		FEBF2030279B4CB600F153D3 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		FEBF2031279B4CB600F153D3 /* PostBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBuilder.swift; sourceTree = "<group>"; };
+		FEBF2032279B4CB600F153D3 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		FEBF2033279B4CB600F153D3 /* PostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,9 +198,22 @@
 		FEA5B260279A282100336B2B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FEBF202E279B4CA000F153D3 /* Post */,
 				FE3D0100279A2C3000E4017F /* Home */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		FEBF202E279B4CA000F153D3 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				FEBF202F279B4CB600F153D3 /* PostNavigator.swift */,
+				FEBF2030279B4CB600F153D3 /* PostViewController.swift */,
+				FEBF2031279B4CB600F153D3 /* PostBuilder.swift */,
+				FEBF2032279B4CB600F153D3 /* PostViewModel.swift */,
+				FEBF2033279B4CB600F153D3 /* PostViewController.xib */,
+			);
+			path = Post;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +286,7 @@
 			files = (
 				FE13D095279B09D30074A131 /* newsLoader.json in Resources */,
 				FE16FE93279A1FF40008B0D1 /* LaunchScreen.storyboard in Resources */,
+				FEBF2038279B4CB600F153D3 /* PostViewController.xib in Resources */,
 				FE16FE90279A1FF40008B0D1 /* Assets.xcassets in Resources */,
 				FE3D010A279A2C4100E4017F /* HomeViewController.xib in Resources */,
 				FEBF2028279B1C1700F153D3 /* NewsTableViewCell.xib in Resources */,
@@ -285,9 +309,13 @@
 				FEA5B25D279A253C00336B2B /* UIView+Extension.swift in Sources */,
 				FE3D0108279A2C4100E4017F /* HomeBuilder.swift in Sources */,
 				FEBF202D279B3DF700F153D3 /* String+Extension.swift in Sources */,
+				FEBF2034279B4CB600F153D3 /* PostNavigator.swift in Sources */,
 				FE13D088279AF40F0074A131 /* RedditServices.swift in Sources */,
 				FE3D0106279A2C4100E4017F /* HomeNavigator.swift in Sources */,
+				FEBF2035279B4CB600F153D3 /* PostViewController.swift in Sources */,
+				FEBF2036279B4CB600F153D3 /* PostBuilder.swift in Sources */,
 				FE3D0107279A2C4100E4017F /* HomeViewController.swift in Sources */,
+				FEBF2037279B4CB600F153D3 /* PostViewModel.swift in Sources */,
 				FE3D0109279A2C4100E4017F /* HomeViewModel.swift in Sources */,
 				FEA5B251279A219C00336B2B /* BaseClases.swift in Sources */,
 				FE16FE87279A1FF30008B0D1 /* AppDelegate.swift in Sources */,
