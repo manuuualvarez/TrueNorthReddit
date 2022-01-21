@@ -17,10 +17,23 @@ class HomeViewController: BaseViewController {
         return viewModel
     }
     
+//    MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Height = \(self.view.frame.height)")
+        print("Widt = \(self.view.frame.width)")
         setUpNavigationBar()
         setUpTableData()
+        bind()
+    }
+    
+    
+//  MARK: - Observers
+    private func bind(){
+        viewModel.tableNewsData.observe(on: self) { [weak self] _ in
+            self?.tableView.reloadData()
+            self?.tableView.refreshControl?.endRefreshing()
+        }
     }
     
     
@@ -38,8 +51,8 @@ class HomeViewController: BaseViewController {
         tableView.register(nib, forCellReuseIdentifier: "newsCell")
         
         let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = .yellow
-        let attrStr = NSAttributedString(string:"Pull to refresh", attributes: [NSAttributedString.Key.foregroundColor : UIColor.yellow])
+        refreshControl.tintColor = .gray
+        let attrStr = NSAttributedString(string:"Refreshing...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
         refreshControl.attributedTitle = attrStr
         refreshControl.addTarget(self, action: #selector(self.userDidRefresh), for: .valueChanged)
         tableView.refreshControl = refreshControl
@@ -58,12 +71,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return viewModel.tableNewsData.value.count
     }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let data = viewModel.tableNewsData.value
         let newsCell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! NewsTableViewCell
-        newsCell.configurationCell(title: "Hello Word!")
+        newsCell.configurationCell(title: data[indexPath.row].data?.title ?? "")
         return newsCell
     }
     

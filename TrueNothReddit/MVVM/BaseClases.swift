@@ -41,9 +41,7 @@ class BaseViewController: UIViewController {
     }
     
     private func showLoadingView() {
-        if let window = UIApplication.shared.keyWindow {
-            loaderAnimator.show(view: window)
-        }
+        loaderAnimator.show(view: self.view)
     }
     
     private func hideLoadingView() {

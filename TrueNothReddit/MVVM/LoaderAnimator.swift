@@ -24,10 +24,11 @@ final class LoaderAnimatorAdapter: LoaderAnimator {
     public func show(view: UIView){
         if !isLoaderPresented {
             view.isUserInteractionEnabled = false
-            let background = UIView(frame: view.frame)
+            let background = UIView(frame: UIScreen.main.bounds)
             background.backgroundColor = .backgroundLoader
             containerView = LottieAnimationBuilder.createAnimation(contentMode: .scaleAspectFit, loopMode: .loop, animationName: "newsLoader")
-            containerView?.frame.size = CGSize(width: view.frame.size.width / 2, height: view.frame.size.height / 2)
+            containerView?.frame.size = CGSize(width: background.frame.size.width / 2, height: background.frame.size.height / 2)
+            containerView?.frame =  UIScreen.main.bounds
             background.addSubview(containerView!)
             view.addSubview(background)
             isLoaderPresented = true
