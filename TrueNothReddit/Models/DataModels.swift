@@ -43,11 +43,14 @@ struct ChildData: Codable {
     var author: String?
     var numComments: Int?
     var url: String?
+    var createdUTC: Int?
     
     enum CodingKeys: String, CodingKey {
 
         case authorFullname = "author_fullname"
         case title, thumbnail, visited, author, url
+        case createdUTC = "created_utc"
+        case numComments = "num_comments"
 
     }
 }
