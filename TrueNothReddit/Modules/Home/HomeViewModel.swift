@@ -9,10 +9,13 @@ import Foundation
 
 protocol HomeViewModel: BaseViewModel {
     var tableNewsData: TrueNorthObservable<[Child]> { get }
+    func pullToRefres()
 }
 
 
 final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewModel {
+
+    
 //    MARK: Properties
     var navigator: HomeNavigator?
     var tableNewsData: TrueNorthObservable<[Child]> = TrueNorthObservable([])
@@ -36,6 +39,11 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
                     self?.tableNewsData.value = data
             }
         }
+    }
+    
+    func pullToRefres() {
+        tableNewsData.value = []
+        fetchRedditData()
     }
     
     
