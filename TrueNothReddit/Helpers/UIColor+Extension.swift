@@ -10,6 +10,6 @@ import UIKit.UIColor
 
 extension UIColor {
     static var backgroundLoader: UIColor {
-        return white.withAlphaComponent(0.7)
+        return gray.withAlphaComponent(0.7)
     }
 }

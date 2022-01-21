@@ -41,9 +41,7 @@ class BaseViewController: UIViewController {
     }
     
     private func showLoadingView() {
-        if let window = UIApplication.shared.keyWindow {
-            loaderAnimator.show(view: window)
-        }
+        loaderAnimator.show(view: self.view)
     }
     
     private func hideLoadingView() {
@@ -64,4 +62,19 @@ protocol BaseViewModel {
     func viewDidAppear()
     func viewWillAppear()
     var isLoadingObservable: TrueNorthObservableWhenValueChange<Bool> { get }
+}
+
+class BaseViewModelImplementation: NSObject, BaseViewModel {
+    var isLoadingObservable = TrueNorthObservableWhenValueChange<Bool>(false)
+    
+    func viewWillAppear() {}
+    func viewDidLoad() {}
+    func viewDidAppear() {}
+}
+
+    // MARK: - Base Navigator
+
+class BaseNavigator {
+    weak var view: UIViewController?
+    
 }

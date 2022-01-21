@@ -7,34 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE13D083279AF1270074A131 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13D081279AF1270074A131 /* NewsTableViewCell.swift */; };
+		FE13D084279AF1270074A131 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE13D082279AF1270074A131 /* NewsTableViewCell.xib */; };
+		FE13D088279AF40F0074A131 /* RedditServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13D087279AF40F0074A131 /* RedditServices.swift */; };
+		FE13D08A279AF7870074A131 /* NetworkingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13D089279AF7870074A131 /* NetworkingProtocols.swift */; };
+		FE13D08D279AF82F0074A131 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FE13D08C279AF82F0074A131 /* Alamofire */; };
+		FE13D08F279AF9270074A131 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13D08E279AF9270074A131 /* APIManager.swift */; };
+		FE13D092279AFAB90074A131 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13D091279AFAB90074A131 /* DataModels.swift */; };
+		FE13D095279B09D30074A131 /* newsLoader.json in Resources */ = {isa = PBXBuildFile; fileRef = FE13D094279B09D30074A131 /* newsLoader.json */; };
 		FE16FE87279A1FF30008B0D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE16FE86279A1FF30008B0D1 /* AppDelegate.swift */; };
 		FE16FE89279A1FF30008B0D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE16FE88279A1FF30008B0D1 /* SceneDelegate.swift */; };
-		FE16FE8E279A1FF30008B0D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE16FE8C279A1FF30008B0D1 /* Main.storyboard */; };
 		FE16FE90279A1FF40008B0D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE16FE8F279A1FF40008B0D1 /* Assets.xcassets */; };
 		FE16FE93279A1FF40008B0D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE16FE91279A1FF40008B0D1 /* LaunchScreen.storyboard */; };
+		FE3D0106279A2C4100E4017F /* HomeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3D0101279A2C4100E4017F /* HomeNavigator.swift */; };
+		FE3D0107279A2C4100E4017F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3D0102279A2C4100E4017F /* HomeViewController.swift */; };
+		FE3D0108279A2C4100E4017F /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3D0103279A2C4100E4017F /* HomeBuilder.swift */; };
+		FE3D0109279A2C4100E4017F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3D0104279A2C4100E4017F /* HomeViewModel.swift */; };
+		FE3D010A279A2C4100E4017F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE3D0105279A2C4100E4017F /* HomeViewController.xib */; };
 		FEA5B251279A219C00336B2B /* BaseClases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B250279A219C00336B2B /* BaseClases.swift */; };
 		FEA5B253279A21E500336B2B /* Observables.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B252279A21E500336B2B /* Observables.swift */; };
 		FEA5B255279A224F00336B2B /* LoaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B254279A224F00336B2B /* LoaderAnimator.swift */; };
 		FEA5B258279A245400336B2B /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FEA5B257279A245400336B2B /* Lottie */; };
 		FEA5B25B279A24E700336B2B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B25A279A24E700336B2B /* UIColor+Extension.swift */; };
 		FEA5B25D279A253C00336B2B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B25C279A253C00336B2B /* UIView+Extension.swift */; };
-		FEA5B25F279A277C00336B2B /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B25E279A277C00336B2B /* UIApplication+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE13D081279AF1270074A131 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		FE13D082279AF1270074A131 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		FE13D087279AF40F0074A131 /* RedditServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditServices.swift; sourceTree = "<group>"; };
+		FE13D089279AF7870074A131 /* NetworkingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProtocols.swift; sourceTree = "<group>"; };
+		FE13D08E279AF9270074A131 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		FE13D091279AFAB90074A131 /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
+		FE13D094279B09D30074A131 /* newsLoader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newsLoader.json; sourceTree = "<group>"; };
 		FE16FE83279A1FF30008B0D1 /* TrueNothReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueNothReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE16FE86279A1FF30008B0D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE16FE88279A1FF30008B0D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FE16FE8D279A1FF30008B0D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE16FE8F279A1FF40008B0D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE16FE92279A1FF40008B0D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE16FE94279A1FF40008B0D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE3D0101279A2C4100E4017F /* HomeNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigator.swift; sourceTree = "<group>"; };
+		FE3D0102279A2C4100E4017F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FE3D0103279A2C4100E4017F /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
+		FE3D0104279A2C4100E4017F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		FE3D0105279A2C4100E4017F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		FEA5B250279A219C00336B2B /* BaseClases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseClases.swift; sourceTree = "<group>"; };
 		FEA5B252279A21E500336B2B /* Observables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observables.swift; sourceTree = "<group>"; };
 		FEA5B254279A224F00336B2B /* LoaderAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderAnimator.swift; sourceTree = "<group>"; };
 		FEA5B25A279A24E700336B2B /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		FEA5B25C279A253C00336B2B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		FEA5B25E279A277C00336B2B /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,12 +64,56 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEA5B258279A245400336B2B /* Lottie in Frameworks */,
+				FE13D08D279AF82F0074A131 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE13D080279AF0F50074A131 /* NewsCell */ = {
+			isa = PBXGroup;
+			children = (
+				FE13D081279AF1270074A131 /* NewsTableViewCell.swift */,
+				FE13D082279AF1270074A131 /* NewsTableViewCell.xib */,
+			);
+			path = NewsCell;
+			sourceTree = "<group>";
+		};
+		FE13D085279AF3EF0074A131 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FE13D086279AF3F90074A131 /* Services */,
+				FE13D089279AF7870074A131 /* NetworkingProtocols.swift */,
+				FE13D08E279AF9270074A131 /* APIManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		FE13D086279AF3F90074A131 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FE13D087279AF40F0074A131 /* RedditServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FE13D090279AF9950074A131 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FE13D091279AFAB90074A131 /* DataModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FE13D093279B04F90074A131 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				FE13D094279B09D30074A131 /* newsLoader.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
 		FE16FE7A279A1FF30008B0D1 = {
 			isa = PBXGroup;
 			children = (
@@ -68,17 +133,31 @@
 		FE16FE85279A1FF30008B0D1 /* TrueNothReddit */ = {
 			isa = PBXGroup;
 			children = (
+				FE13D090279AF9950074A131 /* Models */,
+				FE13D085279AF3EF0074A131 /* Networking */,
 				FEA5B260279A282100336B2B /* Modules */,
 				FEA5B259279A24CA00336B2B /* Helpers */,
 				FEA5B24F279A218100336B2B /* MVVM */,
 				FE16FE86279A1FF30008B0D1 /* AppDelegate.swift */,
 				FE16FE88279A1FF30008B0D1 /* SceneDelegate.swift */,
-				FE16FE8C279A1FF30008B0D1 /* Main.storyboard */,
 				FE16FE8F279A1FF40008B0D1 /* Assets.xcassets */,
 				FE16FE91279A1FF40008B0D1 /* LaunchScreen.storyboard */,
 				FE16FE94279A1FF40008B0D1 /* Info.plist */,
 			);
 			path = TrueNothReddit;
+			sourceTree = "<group>";
+		};
+		FE3D0100279A2C3000E4017F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FE13D080279AF0F50074A131 /* NewsCell */,
+				FE3D0101279A2C4100E4017F /* HomeNavigator.swift */,
+				FE3D0102279A2C4100E4017F /* HomeViewController.swift */,
+				FE3D0103279A2C4100E4017F /* HomeBuilder.swift */,
+				FE3D0104279A2C4100E4017F /* HomeViewModel.swift */,
+				FE3D0105279A2C4100E4017F /* HomeViewController.xib */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		FEA5B24F279A218100336B2B /* MVVM */ = {
@@ -94,9 +173,9 @@
 		FEA5B259279A24CA00336B2B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				FE13D093279B04F90074A131 /* Lottie */,
 				FEA5B25A279A24E700336B2B /* UIColor+Extension.swift */,
 				FEA5B25C279A253C00336B2B /* UIView+Extension.swift */,
-				FEA5B25E279A277C00336B2B /* UIApplication+Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -104,6 +183,7 @@
 		FEA5B260279A282100336B2B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FE3D0100279A2C3000E4017F /* Home */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -126,6 +206,7 @@
 			name = TrueNothReddit;
 			packageProductDependencies = (
 				FEA5B257279A245400336B2B /* Lottie */,
+				FE13D08C279AF82F0074A131 /* Alamofire */,
 			);
 			productName = TrueNothReddit;
 			productReference = FE16FE83279A1FF30008B0D1 /* TrueNothReddit.app */;
@@ -157,6 +238,7 @@
 			mainGroup = FE16FE7A279A1FF30008B0D1;
 			packageReferences = (
 				FEA5B256279A245400336B2B /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				FE13D08B279AF82F0074A131 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = FE16FE84279A1FF30008B0D1 /* Products */;
 			projectDirPath = "";
@@ -172,9 +254,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE13D095279B09D30074A131 /* newsLoader.json in Resources */,
 				FE16FE93279A1FF40008B0D1 /* LaunchScreen.storyboard in Resources */,
 				FE16FE90279A1FF40008B0D1 /* Assets.xcassets in Resources */,
-				FE16FE8E279A1FF30008B0D1 /* Main.storyboard in Resources */,
+				FE13D084279AF1270074A131 /* NewsTableViewCell.xib in Resources */,
+				FE3D010A279A2C4100E4017F /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,10 +269,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE13D08F279AF9270074A131 /* APIManager.swift in Sources */,
+				FE13D092279AFAB90074A131 /* DataModels.swift in Sources */,
 				FEA5B25B279A24E700336B2B /* UIColor+Extension.swift in Sources */,
 				FEA5B253279A21E500336B2B /* Observables.swift in Sources */,
+				FE13D08A279AF7870074A131 /* NetworkingProtocols.swift in Sources */,
 				FEA5B25D279A253C00336B2B /* UIView+Extension.swift in Sources */,
-				FEA5B25F279A277C00336B2B /* UIApplication+Extension.swift in Sources */,
+				FE3D0108279A2C4100E4017F /* HomeBuilder.swift in Sources */,
+				FE13D083279AF1270074A131 /* NewsTableViewCell.swift in Sources */,
+				FE13D088279AF40F0074A131 /* RedditServices.swift in Sources */,
+				FE3D0106279A2C4100E4017F /* HomeNavigator.swift in Sources */,
+				FE3D0107279A2C4100E4017F /* HomeViewController.swift in Sources */,
+				FE3D0109279A2C4100E4017F /* HomeViewModel.swift in Sources */,
 				FEA5B251279A219C00336B2B /* BaseClases.swift in Sources */,
 				FE16FE87279A1FF30008B0D1 /* AppDelegate.swift in Sources */,
 				FE16FE89279A1FF30008B0D1 /* SceneDelegate.swift in Sources */,
@@ -199,14 +291,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FE16FE8C279A1FF30008B0D1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FE16FE8D279A1FF30008B0D1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FE16FE91279A1FF40008B0D1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -252,6 +336,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -272,6 +357,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -313,6 +399,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -327,6 +414,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -346,7 +434,6 @@
 				INFOPLIST_FILE = TrueNothReddit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -374,7 +461,6 @@
 				INFOPLIST_FILE = TrueNothReddit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -414,6 +500,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FE13D08B279AF82F0074A131 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		FEA5B256279A245400336B2B /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
@@ -425,6 +519,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FE13D08C279AF82F0074A131 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE13D08B279AF82F0074A131 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		FEA5B257279A245400336B2B /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FEA5B256279A245400336B2B /* XCRemoteSwiftPackageReference "lottie-ios" */;
