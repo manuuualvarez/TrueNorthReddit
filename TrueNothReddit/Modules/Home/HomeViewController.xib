@@ -3,11 +3,13 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
+                <outlet property="tableView" destination="Yhy-m4-hyM" id="2fh-yy-PF0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,19 +18,24 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello word!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9g-af-UPM">
-                    <rect key="frame" x="144.5" y="323" width="86" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Yhy-m4-hyM">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Y9g-af-UPM" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ipi-29-YgG"/>
-                <constraint firstItem="Y9g-af-UPM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qp1-Hg-mID"/>
+                <constraint firstAttribute="bottom" secondItem="Yhy-m4-hyM" secondAttribute="bottom" id="Vdv-RY-LaO"/>
+                <constraint firstItem="Yhy-m4-hyM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="aAD-Jx-u9w"/>
+                <constraint firstItem="Yhy-m4-hyM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iNL-ld-SWp"/>
+                <constraint firstAttribute="trailing" secondItem="Yhy-m4-hyM" secondAttribute="trailing" id="uzP-QQ-IpN"/>
             </constraints>
-            <point key="canvasLocation" x="138" y="154"/>
+            <point key="canvasLocation" x="136.80000000000001" y="153.37331334332833"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

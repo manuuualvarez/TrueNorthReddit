@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE13D083279AF1270074A131 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13D081279AF1270074A131 /* NewsTableViewCell.swift */; };
+		FE13D084279AF1270074A131 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE13D082279AF1270074A131 /* NewsTableViewCell.xib */; };
 		FE16FE87279A1FF30008B0D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE16FE86279A1FF30008B0D1 /* AppDelegate.swift */; };
 		FE16FE89279A1FF30008B0D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE16FE88279A1FF30008B0D1 /* SceneDelegate.swift */; };
 		FE16FE90279A1FF40008B0D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE16FE8F279A1FF40008B0D1 /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE13D081279AF1270074A131 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		FE13D082279AF1270074A131 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		FE16FE83279A1FF30008B0D1 /* TrueNothReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueNothReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE16FE86279A1FF30008B0D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE16FE88279A1FF30008B0D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE13D080279AF0F50074A131 /* NewsCell */ = {
+			isa = PBXGroup;
+			children = (
+				FE13D081279AF1270074A131 /* NewsTableViewCell.swift */,
+				FE13D082279AF1270074A131 /* NewsTableViewCell.xib */,
+			);
+			path = NewsCell;
+			sourceTree = "<group>";
+		};
 		FE16FE7A279A1FF30008B0D1 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +104,7 @@
 		FE3D0100279A2C3000E4017F /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				FE13D080279AF0F50074A131 /* NewsCell */,
 				FE3D0101279A2C4100E4017F /* HomeNavigator.swift */,
 				FE3D0102279A2C4100E4017F /* HomeViewController.swift */,
 				FE3D0103279A2C4100E4017F /* HomeBuilder.swift */,
@@ -194,6 +208,7 @@
 			files = (
 				FE16FE93279A1FF40008B0D1 /* LaunchScreen.storyboard in Resources */,
 				FE16FE90279A1FF40008B0D1 /* Assets.xcassets in Resources */,
+				FE13D084279AF1270074A131 /* NewsTableViewCell.xib in Resources */,
 				FE3D010A279A2C4100E4017F /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +224,7 @@
 				FEA5B253279A21E500336B2B /* Observables.swift in Sources */,
 				FEA5B25D279A253C00336B2B /* UIView+Extension.swift in Sources */,
 				FE3D0108279A2C4100E4017F /* HomeBuilder.swift in Sources */,
+				FE13D083279AF1270074A131 /* NewsTableViewCell.swift in Sources */,
 				FEA5B25F279A277C00336B2B /* UIApplication+Extension.swift in Sources */,
 				FE3D0106279A2C4100E4017F /* HomeNavigator.swift in Sources */,
 				FE3D0107279A2C4100E4017F /* HomeViewController.swift in Sources */,
