@@ -73,26 +73,9 @@ class NewsTableViewCell: UITableViewCell, ImageDidTouch {
         imageDidTouch(image: image )
     }
     
-    func imageDidTouch(image: UIImage) {
-
+    internal func imageDidTouch(image: UIImage) {
         delegate?.imageDidTouch(image: image)
-                
-//        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-//            PHPhotoLibrary.requestAuthorization { status in
-//                switch status {
-//                    case .notDetermined, .restricted, .denied, .limited :
-//                        self.requestPhotoLibraryPermissions()
-//                    case .authorized:
-//                        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-//                    @unknown default:
-//                        print("unknown")
-//                }
-//            }
-//        }
     }
-    
-    
-
     
     private func showPermissionsAlert() {
         let alert = UIAlertController(title: "Allow Photo Access", message: "To save the image, we need access to your photo roll, please check", preferredStyle: .alert)
