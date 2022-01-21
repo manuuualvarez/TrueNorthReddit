@@ -77,8 +77,23 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = viewModel.tableNewsData.value
         let newsCell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! NewsTableViewCell
-        newsCell.configurationCell(title: data[indexPath.row].data?.title ?? "")
+        newsCell.configurationCell(news: data[indexPath.row])
+        
+        newsCell.sizeToFit()
+        
         return newsCell
+    }
+    
+    private func tableView(tableView: UITableView,
+                   heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let title = viewModel.tableNewsData.value[indexPath.row].data?.title ?? ""
+        let size = CGSize(width: view.frame.width , height: view.frame.height)
+        let heightCell = NSString(string: title).boundingRect(with: size, options: .usesLineFragmentOrigin, context: nil)
+        return heightCell.height + 160
     }
     
     

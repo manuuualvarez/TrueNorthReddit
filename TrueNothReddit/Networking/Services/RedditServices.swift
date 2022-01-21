@@ -11,7 +11,7 @@ class RedditService {
     
 //    MARK: - Request:
     private func fetchNewsRequest() -> RequestSettings {
-        let url: String = "https://www.reddit.com/top.json"
+        let url: String = "https://www.reddit.com/.json"
         
         return RequestConfigurationFactory.createRequestSettings(encodingType: .body,
                                                                  url: url,
