@@ -30,7 +30,6 @@ struct WelcomeData: Codable {
 
     // MARK: - Child
 struct Child: Codable {
-//    var kind: Kind?
     var data: ChildData?
 }
 
@@ -44,13 +43,16 @@ struct ChildData: Codable {
     var numComments: Int?
     var url: String?
     var createdUTC: Int?
+    var urlOverriddenByDest: String?
+    var name: String?
     
     enum CodingKeys: String, CodingKey {
 
         case authorFullname = "author_fullname"
-        case title, thumbnail, visited, author, url
+        case title, thumbnail, visited, author, url, name
         case createdUTC = "created_utc"
         case numComments = "num_comments"
+        case urlOverriddenByDest = "url_overridden_by_dest"
 
     }
 }

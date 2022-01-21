@@ -14,13 +14,19 @@ class HomeNavigator : BaseNavigator{
     }
 
     enum Destination {
+        case goToPost(url: String)
     }
 
     func navigate(to destination: HomeNavigator.Destination) {
         switch destination {
-        default:
-//            uncoment next line
-            print("")
+            case .goToPost(let url):
+                presentPost(url: url)
         }
+    }
+    
+    private func presentPost(url: String){
+        let vc = PostBuilder.build(url: url)
+        vc.modalPresentationStyle = .overFullScreen
+        self.navigation?.pushViewController(vc, animated: true)
     }
 }
