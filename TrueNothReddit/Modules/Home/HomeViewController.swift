@@ -27,7 +27,6 @@ class HomeViewController: BaseViewController {
         bind()
     }
     
-    
 //  MARK: - Observers
     private func bind(){
         viewModel.tableNewsData.observe(on: self) { [weak self] _ in
@@ -36,9 +35,7 @@ class HomeViewController: BaseViewController {
         }
     }
     
-    
 //    MARK: - Methods
-    
     private func setUpNavigationBar(){
         self.navigationController?.navigationBar.topItem?.title = "Reddit"
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -56,20 +53,17 @@ class HomeViewController: BaseViewController {
         refreshControl.attributedTitle = attrStr
         refreshControl.addTarget(self, action: #selector(self.userDidRefresh), for: .valueChanged)
         tableView.refreshControl = refreshControl
-        
     }
     
 //    MARK: - Obj C
     @objc private func userDidRefresh() {
-        
+        viewModel.pullToRefres()
     }
-    
 }
 
 // MARK: - UITableViewDelegate
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.tableNewsData.value.count
     }
@@ -95,6 +89,4 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let heightCell = NSString(string: title).boundingRect(with: size, options: .usesLineFragmentOrigin, context: nil)
         return heightCell.height + 160
     }
-    
-    
 }
