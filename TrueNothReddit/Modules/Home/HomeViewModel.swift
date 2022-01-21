@@ -5,6 +5,8 @@
 //  Created by Manuel Alvarez on 1/20/22.
 //
 import Foundation
+import UIKit
+import Photos
 
 
 protocol HomeViewModel: BaseViewModel {
@@ -12,6 +14,7 @@ protocol HomeViewModel: BaseViewModel {
     func pullToRefres()
     func getDataFromNextPage()
     func goToPost(index: Int)
+    func savePhotoInGallery(image: UIImage)
 }
 
 
@@ -59,7 +62,7 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
             self?.isLoadingObservable.value = false
             switch result {
                 case .failure(_):
-                    print("DEBUG: - Error fail")
+                    print("DEBUG: - Handle Request Error")
                 case .success(let news):
                     guard let data = news.data?.children  else { return }
                     self?.setNextPageQuery(response: news)
@@ -76,7 +79,24 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
         }
     }
     
+    func savePhotoInGallery(image: UIImage) {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            PHPhotoLibrary.requestAuthorization { [weak self] (status) in
+                switch status {
+                    case .notDetermined, .restricted, .denied, .limited :
+                        self?.navigator?.navigate(to: .getPermissions(image: image))
+                    case .authorized:
+                        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                        self?.navigator?.navigate(to: .showSuccessDownloadImage)
+                    @unknown default:
+                        print("unknown")
+                }
+            }
+        }
+    }
+    
 //    MARK: Navigation
+    
     func goToPost(index: Int) {
         guard let dataUrl = tableNewsData.value[index].data?.name,
               let components = dataUrl.components(separatedBy: "_").last
@@ -85,5 +105,5 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
         let url = "https://redd.it/\(components)"
         self.navigator?.navigate(to: .goToPost(url: url))
     }
-
+    
 }

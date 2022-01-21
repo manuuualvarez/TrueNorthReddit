@@ -8,7 +8,11 @@
 import UIKit
 import Kingfisher
 
-class NewsTableViewCell: UITableViewCell {
+protocol ImageDidTouch {
+    func imageDidTouch(image: UIImage)
+}
+
+class NewsTableViewCell: UITableViewCell, ImageDidTouch {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
@@ -17,7 +21,7 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var readStatusLabel: UILabel!
     
-    
+    var delegate: ImageDidTouch?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,9 +39,14 @@ class NewsTableViewCell: UITableViewCell {
         
         if let urlString = news.data?.thumbnail, let url = URL(string: urlString) {
             postImageView.kf.setImage(with: url)
+            let touchGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+            postImageView.addGestureRecognizer(touchGesture)
+            postImageView.isUserInteractionEnabled = true
             if !urlString.contains("http") {
                 let image = UIImage(named: "emptyPhoto")
                 postImageView.image = image
+                postImageView.isUserInteractionEnabled = false
+                postImageView.addGestureRecognizer(touchGesture)
             }
         } else {
             postImageView.image = UIImage(named: "emptyPhoto")
@@ -57,5 +66,39 @@ class NewsTableViewCell: UITableViewCell {
         readStatusLabel.font = UIFont.boldSystemFont(ofSize: 10)
         readStatusLabel.textColor = .lightGray
     }
+    
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        guard let image = postImageView.image else { return }
+        imageDidTouch(image: image )
+    }
+    
+    func imageDidTouch(image: UIImage) {
+
+        delegate?.imageDidTouch(image: image)
+                
+//        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+//            PHPhotoLibrary.requestAuthorization { status in
+//                switch status {
+//                    case .notDetermined, .restricted, .denied, .limited :
+//                        self.requestPhotoLibraryPermissions()
+//                    case .authorized:
+//                        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+//                    @unknown default:
+//                        print("unknown")
+//                }
+//            }
+//        }
+    }
+    
+    
+
+    
+    private func showPermissionsAlert() {
+        let alert = UIAlertController(title: "Allow Photo Access", message: "To save the image, we need access to your photo roll, please check", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .destructive, handler: nil))
+    }
+
+    
     
 }
