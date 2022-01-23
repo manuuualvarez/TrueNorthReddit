@@ -11,7 +11,7 @@ import CoreData
 
 enum CoreDataEntities: String {
     case postReadEntity = "PostReadEntity"
-    case trashPostEntity = "TrashedPostEntity"
+    case trashPostEntity = "TrashedEntity"
 }
 
 
@@ -34,7 +34,17 @@ class PersistenceService {
         }
     }
     
-
+    static func getDeletedPostCoreData()  -> [TrashedEntity]{
+        let fetchRequest: NSFetchRequest<TrashedEntity> = TrashedEntity.fetchRequest()
+        do {
+            let trashNews = try PersistenceService.context.fetch(fetchRequest)
+            return trashNews
+            
+        }catch{
+            return []
+        }
+    }
+    
     
 // MARK: - Core Data stack
     

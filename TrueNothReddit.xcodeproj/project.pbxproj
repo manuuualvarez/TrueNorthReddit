@@ -26,6 +26,8 @@
 		FE750544279D9ADA0045B1D3 /* PostReadEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE750543279D9ADA0045B1D3 /* PostReadEntity+CoreDataClass.swift */; };
 		FE750547279D9BB30045B1D3 /* PostModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE750545279D9BB30045B1D3 /* PostModel.xcdatamodeld */; };
 		FE750549279DA0730045B1D3 /* PostEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE750548279DA0730045B1D3 /* PostEntity+CoreDataProperties.swift */; };
+		FE75054B279DCC830045B1D3 /* TrashedEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE75054A279DCC830045B1D3 /* TrashedEntity+CoreDataProperties.swift */; };
+		FE75054D279DCDD90045B1D3 /* TrasehdEntity+CoraDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE75054C279DCDD90045B1D3 /* TrasehdEntity+CoraDataClass.swift */; };
 		FEA5B251279A219C00336B2B /* BaseClases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B250279A219C00336B2B /* BaseClases.swift */; };
 		FEA5B253279A21E500336B2B /* Observables.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B252279A21E500336B2B /* Observables.swift */; };
 		FEA5B255279A224F00336B2B /* LoaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B254279A224F00336B2B /* LoaderAnimator.swift */; };
@@ -64,6 +66,8 @@
 		FE750543279D9ADA0045B1D3 /* PostReadEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostReadEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FE750546279D9BB30045B1D3 /* PostModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PostModel.xcdatamodel; sourceTree = "<group>"; };
 		FE750548279DA0730045B1D3 /* PostEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FE75054A279DCC830045B1D3 /* TrashedEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrashedEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FE75054C279DCDD90045B1D3 /* TrasehdEntity+CoraDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrasehdEntity+CoraDataClass.swift"; sourceTree = "<group>"; };
 		FEA5B250279A219C00336B2B /* BaseClases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseClases.swift; sourceTree = "<group>"; };
 		FEA5B252279A21E500336B2B /* Observables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observables.swift; sourceTree = "<group>"; };
 		FEA5B254279A224F00336B2B /* LoaderAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderAnimator.swift; sourceTree = "<group>"; };
@@ -188,7 +192,6 @@
 			children = (
 				FE750542279D9A910045B1D3 /* Entities */,
 				FE750540279D99E50045B1D3 /* PersistanceService.swift */,
-				FE750548279DA0730045B1D3 /* PostEntity+CoreDataProperties.swift */,
 				FE750545279D9BB30045B1D3 /* PostModel.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -197,7 +200,10 @@
 		FE750542279D9A910045B1D3 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				FE750548279DA0730045B1D3 /* PostEntity+CoreDataProperties.swift */,
 				FE750543279D9ADA0045B1D3 /* PostReadEntity+CoreDataClass.swift */,
+				FE75054A279DCC830045B1D3 /* TrashedEntity+CoreDataProperties.swift */,
+				FE75054C279DCDD90045B1D3 /* TrasehdEntity+CoraDataClass.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -338,6 +344,7 @@
 				FEA5B25D279A253C00336B2B /* UIView+Extension.swift in Sources */,
 				FE3D0108279A2C4100E4017F /* HomeBuilder.swift in Sources */,
 				FEBF202D279B3DF700F153D3 /* String+Extension.swift in Sources */,
+				FE75054D279DCDD90045B1D3 /* TrasehdEntity+CoraDataClass.swift in Sources */,
 				FEBF2034279B4CB600F153D3 /* PostNavigator.swift in Sources */,
 				FE13D088279AF40F0074A131 /* RedditServices.swift in Sources */,
 				FE750544279D9ADA0045B1D3 /* PostReadEntity+CoreDataClass.swift in Sources */,
@@ -349,6 +356,7 @@
 				FEBF2037279B4CB600F153D3 /* PostViewModel.swift in Sources */,
 				FE3D0109279A2C4100E4017F /* HomeViewModel.swift in Sources */,
 				FEA5B251279A219C00336B2B /* BaseClases.swift in Sources */,
+				FE75054B279DCC830045B1D3 /* TrashedEntity+CoreDataProperties.swift in Sources */,
 				FE16FE87279A1FF30008B0D1 /* AppDelegate.swift in Sources */,
 				FE16FE89279A1FF30008B0D1 /* SceneDelegate.swift in Sources */,
 				FEA5B255279A224F00336B2B /* LoaderAnimator.swift in Sources */,

@@ -3,7 +3,11 @@
     <entity name="PostReadEntity" representedClassName="PostReadEntity" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="TrashedEntity" representedClassName="TrashedEntity" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="PostReadEntity" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="TrashedEntity" positionX="-54" positionY="0" width="128" height="44"/>
     </elements>
 </model>
