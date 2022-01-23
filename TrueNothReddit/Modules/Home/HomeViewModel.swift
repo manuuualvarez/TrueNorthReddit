@@ -53,6 +53,7 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
     
 //    MARK: Methods
     private func fetchRedditData() {
+        animationName = .loader
         isLoadingObservable.value = true
         redditServices.getNews { [weak self] (result) in
             self?.isLoadingObservable.value = false
@@ -74,7 +75,7 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
     
     func getDataFromNextPage() {
         guard afterPage != "" else { return }
-        
+        animationName = .loader
         isLoadingObservable.value = true
         redditServices.getNextPageData(id: afterPage, completion: { [weak self] (result) in
             self?.isLoadingObservable.value = false
@@ -163,6 +164,8 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
     }
             
     internal func removeAllPostDidTapped() {
+        animationName = .removeLoader
+        isLoadingObservable.value = true
         for i in 0...(tableNewsData.value.count - 1) {
             let trash = TrashedEntity(context: PersistenceService.context)
             guard let item = tableNewsData.value[i].data?.name else { return }
@@ -170,8 +173,12 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
             PersistenceService.saveContext()
         }
         tableNewsData.value = []
-        getDataFromNextPage()
-        showSettingsBtn()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.isLoadingObservable.value = false
+            self.showSettingsBtn()
+            self.getDataFromNextPage()
+        }
     }
     
     private func deleteAllCoreData() {

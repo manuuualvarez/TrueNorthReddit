@@ -28,6 +28,7 @@
 		FE750549279DA0730045B1D3 /* PostEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE750548279DA0730045B1D3 /* PostEntity+CoreDataProperties.swift */; };
 		FE75054B279DCC830045B1D3 /* TrashedEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE75054A279DCC830045B1D3 /* TrashedEntity+CoreDataProperties.swift */; };
 		FE75054D279DCDD90045B1D3 /* TrasehdEntity+CoraDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE75054C279DCDD90045B1D3 /* TrasehdEntity+CoraDataClass.swift */; };
+		FE75054F279E0F300045B1D3 /* removeAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = FE75054E279E0F300045B1D3 /* removeAnimation.json */; };
 		FEA5B251279A219C00336B2B /* BaseClases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B250279A219C00336B2B /* BaseClases.swift */; };
 		FEA5B253279A21E500336B2B /* Observables.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B252279A21E500336B2B /* Observables.swift */; };
 		FEA5B255279A224F00336B2B /* LoaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B254279A224F00336B2B /* LoaderAnimator.swift */; };
@@ -68,6 +69,7 @@
 		FE750548279DA0730045B1D3 /* PostEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FE75054A279DCC830045B1D3 /* TrashedEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrashedEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FE75054C279DCDD90045B1D3 /* TrasehdEntity+CoraDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrasehdEntity+CoraDataClass.swift"; sourceTree = "<group>"; };
+		FE75054E279E0F300045B1D3 /* removeAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = removeAnimation.json; sourceTree = "<group>"; };
 		FEA5B250279A219C00336B2B /* BaseClases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseClases.swift; sourceTree = "<group>"; };
 		FEA5B252279A21E500336B2B /* Observables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observables.swift; sourceTree = "<group>"; };
 		FEA5B254279A224F00336B2B /* LoaderAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderAnimator.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		FE13D093279B04F90074A131 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				FE75054E279E0F300045B1D3 /* removeAnimation.json */,
 				FE13D094279B09D30074A131 /* newsLoader.json */,
 			);
 			path = Lottie;
@@ -323,6 +326,7 @@
 				FEBF2038279B4CB600F153D3 /* PostViewController.xib in Resources */,
 				FE16FE90279A1FF40008B0D1 /* Assets.xcassets in Resources */,
 				FE3D010A279A2C4100E4017F /* HomeViewController.xib in Resources */,
+				FE75054F279E0F300045B1D3 /* removeAnimation.json in Resources */,
 				FEBF2028279B1C1700F153D3 /* NewsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
