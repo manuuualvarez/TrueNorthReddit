@@ -16,6 +16,7 @@ protocol HomeViewModel: BaseViewModel {
     func getDataFromNextPage()
     func goToPost(index: Int)
     func savePhotoInGallery(image: UIImage)
+    func deletePost(index: Int)
 }
 
 
@@ -36,7 +37,7 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
     }
     
     override func viewWillAppear() {
-        getSavedPostDataAndCheckIfRead(isFromNextPage: false, isWithMemoryData: true)
+        getSavedPostDataAndCheckIfReadOrDeleted(isFromNextPage: false, isWithMemoryData: true)
     }
     
 //    MARK: Methods
@@ -50,7 +51,7 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
                 case .success(let news):
                     guard let data = news.data?.children  else { return }
                     self?.setNextPageQuery(response: news)
-                    self?.getSavedPostDataAndCheckIfRead(data: data, isFromNextPage: false)
+                    self?.getSavedPostDataAndCheckIfReadOrDeleted(data: data, isFromNextPage: false)
             }
         }
     }
@@ -72,7 +73,7 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
                 case .success(let news):
                     guard let data = news.data?.children  else { return }
                     self?.setNextPageQuery(response: news)
-                    self?.getSavedPostDataAndCheckIfRead(data: data, isFromNextPage: true)
+                    self?.getSavedPostDataAndCheckIfReadOrDeleted(data: data, isFromNextPage: true)
             }
         })
     }
@@ -101,7 +102,7 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
         }
     }
     
-    private func getSavedPostDataAndCheckIfRead(data: [Child] = [], isFromNextPage: Bool, isWithMemoryData: Bool = false) {
+    private func getSavedPostDataAndCheckIfReadOrDeleted(data: [Child] = [], isFromNextPage: Bool, isWithMemoryData: Bool = false) {
         readedItems = PersistenceService.getReadedPostCoreData()
         var postArray: [Child] = []
 
@@ -119,11 +120,35 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
             }
         }
         
+        let deletedItems = fetchTrashPost()
+        postArray.removeAll { (post) in
+            guard let name = post.data?.name, let itemsDeleted = deletedItems else { return false }
+            return itemsDeleted.contains{ $0.name == name }
+        }
+        
         if isFromNextPage {
             tableNewsData.value.append(contentsOf: postArray)
         } else {
             tableNewsData.value = postArray
         }
+    }
+    
+    func deletePost(index: Int) {
+        guard let data = tableNewsData.value[index].data else { return }
+        saveTrashInCoreData(data: data)
+        tableNewsData.value.remove(at: index)
+    }
+    
+    private func saveTrashInCoreData(data: ChildData){
+        guard let name = data.name else { return }
+        let trash = TrashedEntity(context: PersistenceService.context)
+        trash.name = name
+        PersistenceService.saveContext()
+    }
+    
+    private func fetchTrashPost() -> [TrashedEntity]? {
+        return PersistenceService.getDeletedPostCoreData()
+        
     }
     
 
