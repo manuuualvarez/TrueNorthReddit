@@ -104,7 +104,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        viewModel.deletePost(index: indexPath.row)
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.transform = CGAffineTransform(rotationAngle: 180)
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 0.05,
+            animations: {
+                cell?.alpha = 0
+                cell?.transform = CGAffineTransform(rotationAngle: 0.0)
+            },
+            completion: { _ in self.viewModel.deletePost(index: indexPath.row) })
     }
 }
 
