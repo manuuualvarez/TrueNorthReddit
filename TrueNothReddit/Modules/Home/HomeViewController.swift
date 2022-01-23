@@ -31,12 +31,28 @@ class HomeViewController: BaseViewController {
             self?.tableView.reloadData()
             self?.tableView.refreshControl?.endRefreshing()
         }
+        viewModel.showBtnToCleanCoreData.observe(on: self) { [weak self] _ in
+            self?.setCleanCoreDataBtn()
+        }
     }
     
 //    MARK: - Methods
     private func setUpNavigationBar(){
         self.navigationController?.navigationBar.topItem?.title = "Reddit"
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        let removeBtn = UIBarButtonItem(title: "Remove All", style: .plain, target: self, action: #selector(removeAllPostTapped))
+        removeBtn.tintColor = .red
+        navigationItem.rightBarButtonItem = removeBtn
+    }
+    
+    private func setCleanCoreDataBtn() {
+        if viewModel.showBtnToCleanCoreData.value {
+            let cleanCoreDataBtn = UIBarButtonItem(title: "Clean Core Data", style: .plain, target: self, action: #selector(cleanCoreDataTapped))
+            cleanCoreDataBtn.tintColor = .red
+            navigationItem.leftBarButtonItem = cleanCoreDataBtn
+        } else {
+            navigationItem.leftBarButtonItem = nil
+        }
     }
     
     private func setUpTableData() {
@@ -57,6 +73,14 @@ class HomeViewController: BaseViewController {
     @objc private func userDidRefresh() {
         viewModel.pullToRefres()
     }
+    
+    @objc private func removeAllPostTapped() {
+        viewModel.removeAllPostDidTapped()
+    }
+    
+    @objc private func cleanCoreDataTapped() {
+        viewModel.clearCoreDataDidTouch()
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -71,9 +95,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let newsCell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! NewsTableViewCell
         newsCell.delegate = self
         newsCell.configurationCell(news: data[indexPath.row])
-        
         newsCell.sizeToFit()
-        
         return newsCell
     }
     
@@ -98,13 +120,22 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.goToPost(index: indexPath.row)
     }
-    
+
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        viewModel.deletePost(index: indexPath.row)
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.transform = CGAffineTransform(rotationAngle: 180)
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 0.05,
+            animations: {
+                cell?.alpha = 0
+                cell?.transform = CGAffineTransform(rotationAngle: 0.0)
+            },
+            completion: { _ in self.viewModel.deletePost(index: indexPath.row) })
     }
 }
 
@@ -112,6 +143,4 @@ extension HomeViewController: ImageDidTouch {
     func imageDidTouch(image: UIImage) {
         viewModel.savePhotoInGallery(image: image)
     }
-    
-    
 }

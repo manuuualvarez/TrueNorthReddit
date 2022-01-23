@@ -22,7 +22,6 @@ class PersistenceService {
         return persistentContainer.viewContext
     }
     
-    
     static func getReadedPostCoreData()  -> [PostReadEntity]{
         let fetchRequest: NSFetchRequest<PostReadEntity> = PostReadEntity.fetchRequest()
         do {
@@ -42,6 +41,20 @@ class PersistenceService {
             
         }catch{
             return []
+        }
+    }
+    
+    static func deleteAllData(_ entity: CoreDataEntities) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity.rawValue)
+        fetchRequest.returnsObjectsAsFaults = false
+        do {
+            let results = try context.fetch(fetchRequest)
+            for object in results {
+                guard let objectData = object as? NSManagedObject else {continue}
+                context.delete(objectData)
+            }
+        } catch let error {
+            print("Detele all data in \(entity) error :", error)
         }
     }
     

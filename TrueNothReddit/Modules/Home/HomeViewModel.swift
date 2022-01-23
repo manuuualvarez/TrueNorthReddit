@@ -9,6 +9,11 @@ import UIKit
 import Photos
 import SwiftUI
 
+struct EditPostModel {
+    let name: String
+    var isSelected: Bool
+}
+
 
 protocol HomeViewModel: BaseViewModel {
     var tableNewsData: TrueNorthObservable<[Child]> { get }
@@ -17,23 +22,29 @@ protocol HomeViewModel: BaseViewModel {
     func goToPost(index: Int)
     func savePhotoInGallery(image: UIImage)
     func deletePost(index: Int)
+    func removeAllPostDidTapped()
+    var showBtnToCleanCoreData: TrueNorthObservable<Bool> { get }
+    func clearCoreDataDidTouch()
 }
 
 
 final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewModel {
-    
+
 //    MARK: Properties
     var navigator: HomeNavigator?
     var tableNewsData: TrueNorthObservable<[Child]> = TrueNorthObservable([])
     var afterPage = ""
     var readedItems: [PostReadEntity] = []
-    
+    var showBtnToCleanCoreData: TrueNorthObservable<Bool> = TrueNorthObservable(false)
+
 //    MARK: Service
     var redditServices = RedditService()
     
 //    MARK: Life cycle
     override func viewDidLoad() {
+        deleteAllCoreData()
         fetchRedditData()
+        showSettingsBtn()
     }
     
     override func viewWillAppear() {
@@ -144,14 +155,41 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
         let trash = TrashedEntity(context: PersistenceService.context)
         trash.name = name
         PersistenceService.saveContext()
+        showSettingsBtn()
     }
     
     private func fetchTrashPost() -> [TrashedEntity]? {
         return PersistenceService.getDeletedPostCoreData()
-        
+    }
+            
+    internal func removeAllPostDidTapped() {
+        for i in 0...(tableNewsData.value.count - 1) {
+            let trash = TrashedEntity(context: PersistenceService.context)
+            guard let item = tableNewsData.value[i].data?.name else { return }
+            trash.name = item
+            PersistenceService.saveContext()
+        }
+        tableNewsData.value = []
+        getDataFromNextPage()
+        showSettingsBtn()
     }
     
-
+    private func deleteAllCoreData() {
+        PersistenceService.deleteAllData(.trashPostEntity)
+        PersistenceService.deleteAllData(.postReadEntity)
+        PersistenceService.saveContext()
+        showSettingsBtn()
+        getDataFromNextPage()
+    }
+    
+    private func showSettingsBtn() {
+        showBtnToCleanCoreData.value = fetchTrashPost()?.count ?? 0 > 0 || readedItems.count > 0
+    }
+    
+    func clearCoreDataDidTouch() {
+        deleteAllCoreData()
+    }
+    
 //    MARK: Navigation
     
     func goToPost(index: Int) {
@@ -163,5 +201,4 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
         let url = "https://redd.it/\(components)"
         self.navigator?.navigate(to: .goToPost(url: url, name: name))
     }
-    
 }
