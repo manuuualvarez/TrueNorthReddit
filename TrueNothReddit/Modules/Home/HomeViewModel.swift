@@ -179,6 +179,7 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
         PersistenceService.deleteAllData(.postReadEntity)
         PersistenceService.saveContext()
         showSettingsBtn()
+        getDataFromNextPage()
     }
     
     private func showSettingsBtn() {
