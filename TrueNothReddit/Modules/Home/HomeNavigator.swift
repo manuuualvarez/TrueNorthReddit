@@ -15,13 +15,13 @@ class HomeNavigator : BaseNavigator{
     }
 
     enum Destination {
-        case goToPost(url: String), getPermissions(image: UIImage), showSuccessDownloadImage
+        case goToPost(url: String, name: String), getPermissions(image: UIImage), showSuccessDownloadImage
     }
 
     func navigate(to destination: HomeNavigator.Destination) {
         switch destination {
-            case .goToPost(let url):
-                presentPost(url: url)
+            case .goToPost(let url, let name):
+                presentPost(url: url, name: name)
             case .getPermissions(let image):
                 showAllowAccessPermissions(image: image)
             case .showSuccessDownloadImage:
@@ -30,8 +30,8 @@ class HomeNavigator : BaseNavigator{
         }
     }
     
-    private func presentPost(url: String){
-        let vc = PostBuilder.build(url: url)
+    private func presentPost(url: String, name: String){
+        let vc = PostBuilder.build(url: url, name: name)
         vc.modalPresentationStyle = .overFullScreen
         self.navigation?.pushViewController(vc, animated: true)
     }

@@ -22,6 +22,10 @@
 		FE3D0108279A2C4100E4017F /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3D0103279A2C4100E4017F /* HomeBuilder.swift */; };
 		FE3D0109279A2C4100E4017F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3D0104279A2C4100E4017F /* HomeViewModel.swift */; };
 		FE3D010A279A2C4100E4017F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE3D0105279A2C4100E4017F /* HomeViewController.xib */; };
+		FE750541279D99E50045B1D3 /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE750540279D99E50045B1D3 /* PersistanceService.swift */; };
+		FE750544279D9ADA0045B1D3 /* PostReadEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE750543279D9ADA0045B1D3 /* PostReadEntity+CoreDataClass.swift */; };
+		FE750547279D9BB30045B1D3 /* PostModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE750545279D9BB30045B1D3 /* PostModel.xcdatamodeld */; };
+		FE750549279DA0730045B1D3 /* PostEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE750548279DA0730045B1D3 /* PostEntity+CoreDataProperties.swift */; };
 		FEA5B251279A219C00336B2B /* BaseClases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B250279A219C00336B2B /* BaseClases.swift */; };
 		FEA5B253279A21E500336B2B /* Observables.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B252279A21E500336B2B /* Observables.swift */; };
 		FEA5B255279A224F00336B2B /* LoaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA5B254279A224F00336B2B /* LoaderAnimator.swift */; };
@@ -56,6 +60,10 @@
 		FE3D0103279A2C4100E4017F /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
 		FE3D0104279A2C4100E4017F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FE3D0105279A2C4100E4017F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		FE750540279D99E50045B1D3 /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
+		FE750543279D9ADA0045B1D3 /* PostReadEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostReadEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FE750546279D9BB30045B1D3 /* PostModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PostModel.xcdatamodel; sourceTree = "<group>"; };
+		FE750548279DA0730045B1D3 /* PostEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FEA5B250279A219C00336B2B /* BaseClases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseClases.swift; sourceTree = "<group>"; };
 		FEA5B252279A21E500336B2B /* Observables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observables.swift; sourceTree = "<group>"; };
 		FEA5B254279A224F00336B2B /* LoaderAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderAnimator.swift; sourceTree = "<group>"; };
@@ -147,11 +155,12 @@
 		FE16FE85279A1FF30008B0D1 /* TrueNothReddit */ = {
 			isa = PBXGroup;
 			children = (
+				FEA5B24F279A218100336B2B /* MVVM */,
+				FE75053F279D99B60045B1D3 /* CoreData */,
 				FE13D090279AF9950074A131 /* Models */,
 				FE13D085279AF3EF0074A131 /* Networking */,
 				FEA5B260279A282100336B2B /* Modules */,
 				FEA5B259279A24CA00336B2B /* Helpers */,
-				FEA5B24F279A218100336B2B /* MVVM */,
 				FE16FE86279A1FF30008B0D1 /* AppDelegate.swift */,
 				FE16FE88279A1FF30008B0D1 /* SceneDelegate.swift */,
 				FE16FE8F279A1FF40008B0D1 /* Assets.xcassets */,
@@ -172,6 +181,25 @@
 				FE3D0105279A2C4100E4017F /* HomeViewController.xib */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		FE75053F279D99B60045B1D3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FE750542279D9A910045B1D3 /* Entities */,
+				FE750540279D99E50045B1D3 /* PersistanceService.swift */,
+				FE750548279DA0730045B1D3 /* PostEntity+CoreDataProperties.swift */,
+				FE750545279D9BB30045B1D3 /* PostModel.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FE750542279D9A910045B1D3 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FE750543279D9ADA0045B1D3 /* PostReadEntity+CoreDataClass.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		FEA5B24F279A218100336B2B /* MVVM */ = {
@@ -305,12 +333,15 @@
 				FEBF2027279B1C1700F153D3 /* NewsTableViewCell.swift in Sources */,
 				FEA5B25B279A24E700336B2B /* UIColor+Extension.swift in Sources */,
 				FEA5B253279A21E500336B2B /* Observables.swift in Sources */,
+				FE750541279D99E50045B1D3 /* PersistanceService.swift in Sources */,
 				FE13D08A279AF7870074A131 /* NetworkingProtocols.swift in Sources */,
 				FEA5B25D279A253C00336B2B /* UIView+Extension.swift in Sources */,
 				FE3D0108279A2C4100E4017F /* HomeBuilder.swift in Sources */,
 				FEBF202D279B3DF700F153D3 /* String+Extension.swift in Sources */,
 				FEBF2034279B4CB600F153D3 /* PostNavigator.swift in Sources */,
 				FE13D088279AF40F0074A131 /* RedditServices.swift in Sources */,
+				FE750544279D9ADA0045B1D3 /* PostReadEntity+CoreDataClass.swift in Sources */,
+				FE750547279D9BB30045B1D3 /* PostModel.xcdatamodeld in Sources */,
 				FE3D0106279A2C4100E4017F /* HomeNavigator.swift in Sources */,
 				FEBF2035279B4CB600F153D3 /* PostViewController.swift in Sources */,
 				FEBF2036279B4CB600F153D3 /* PostBuilder.swift in Sources */,
@@ -321,6 +352,7 @@
 				FE16FE87279A1FF30008B0D1 /* AppDelegate.swift in Sources */,
 				FE16FE89279A1FF30008B0D1 /* SceneDelegate.swift in Sources */,
 				FEA5B255279A224F00336B2B /* LoaderAnimator.swift in Sources */,
+				FE750549279DA0730045B1D3 /* PostEntity+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +611,19 @@
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		FE750545279D9BB30045B1D3 /* PostModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FE750546279D9BB30045B1D3 /* PostModel.xcdatamodel */,
+			);
+			currentVersion = FE750546279D9BB30045B1D3 /* PostModel.xcdatamodel */;
+			path = PostModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FE16FE7B279A1FF30008B0D1 /* Project object */;
 }

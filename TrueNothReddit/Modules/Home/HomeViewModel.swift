@@ -95,15 +95,17 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
         }
     }
     
+
 //    MARK: Navigation
     
     func goToPost(index: Int) {
         guard let dataUrl = tableNewsData.value[index].data?.name,
-              let components = dataUrl.components(separatedBy: "_").last
+              let components = dataUrl.components(separatedBy: "_").last,
+              let name = tableNewsData.value[index].data?.name
                 else { return }
     
         let url = "https://redd.it/\(components)"
-        self.navigator?.navigate(to: .goToPost(url: url))
+        self.navigator?.navigate(to: .goToPost(url: url, name: name))
     }
     
 }
