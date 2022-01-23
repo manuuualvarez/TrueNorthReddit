@@ -45,6 +45,7 @@ struct ChildData: Codable {
     var createdUTC: Int?
     var urlOverriddenByDest: String?
     var name: String?
+    var isRead: Bool?
     
     enum CodingKeys: String, CodingKey {
 

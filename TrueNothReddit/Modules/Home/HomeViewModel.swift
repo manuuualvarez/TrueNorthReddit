@@ -7,6 +7,7 @@
 import Foundation
 import UIKit
 import Photos
+import SwiftUI
 
 
 protocol HomeViewModel: BaseViewModel {
@@ -24,6 +25,7 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
     var navigator: HomeNavigator?
     var tableNewsData: TrueNorthObservable<[Child]> = TrueNorthObservable([])
     var afterPage = ""
+    var readedItems: [PostReadEntity] = []
     
 //    MARK: Service
     var redditServices = RedditService()
@@ -31,6 +33,10 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
 //    MARK: Life cycle
     override func viewDidLoad() {
         fetchRedditData()
+    }
+    
+    override func viewWillAppear() {
+        getSavedPostDataAndCheckIfRead(isFromNextPage: false, isWithMemoryData: true)
     }
     
 //    MARK: Methods
@@ -44,7 +50,7 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
                 case .success(let news):
                     guard let data = news.data?.children  else { return }
                     self?.setNextPageQuery(response: news)
-                    self?.tableNewsData.value = data
+                    self?.getSavedPostDataAndCheckIfRead(data: data, isFromNextPage: false)
             }
         }
     }
@@ -66,7 +72,7 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
                 case .success(let news):
                     guard let data = news.data?.children  else { return }
                     self?.setNextPageQuery(response: news)
-                    self?.tableNewsData.value.append(contentsOf: data)
+                    self?.getSavedPostDataAndCheckIfRead(data: data, isFromNextPage: true)
             }
         })
     }
@@ -92,6 +98,31 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
                         print("unknown")
                 }
             }
+        }
+    }
+    
+    private func getSavedPostDataAndCheckIfRead(data: [Child] = [], isFromNextPage: Bool, isWithMemoryData: Bool = false) {
+        readedItems = PersistenceService.getReadedPostCoreData()
+        var postArray: [Child] = []
+
+        if !isWithMemoryData {
+             postArray = data.map{ element -> Child in
+                var post: Child = element
+                post.data?.isRead = readedItems.filter{ $0.name == element.data?.name }.count > 0
+                return post
+            }
+        } else {
+            postArray = tableNewsData.value.map{ element -> Child in
+                var post: Child = element
+                post.data?.isRead = readedItems.filter{ $0.name == element.data?.name }.count > 0
+                return post
+            }
+        }
+        
+        if isFromNextPage {
+            tableNewsData.value.append(contentsOf: postArray)
+        } else {
+            tableNewsData.value = postArray
         }
     }
     

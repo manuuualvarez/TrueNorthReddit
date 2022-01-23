@@ -62,9 +62,14 @@ class NewsTableViewCell: UITableViewCell, ImageDidTouch {
             dateLabel.font = UIFont.boldSystemFont(ofSize: 10)
         }
         
-        readStatusLabel.text = "Unread"
-        readStatusLabel.font = UIFont.boldSystemFont(ofSize: 10)
-        readStatusLabel.textColor = .lightGray
+        if news.data?.isRead ?? false {
+            readStatusLabel.text = "Read"
+            readStatusLabel.font = UIFont.boldSystemFont(ofSize: 12)
+            readStatusLabel.textColor = UIColor(red: 35/255, green: 238/255, blue: 245/255, alpha: 1)
+        } else {
+            readStatusLabel.text = "Unread"
+            readStatusLabel.font = UIFont.boldSystemFont(ofSize: 10)
+            readStatusLabel.textColor = .lightGray        }
     }
     
     

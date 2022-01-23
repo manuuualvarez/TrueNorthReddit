@@ -25,7 +25,6 @@ final class PostViewModelImplementation: BaseViewModelImplementation, PostViewMo
         self.name = name
     }
     
-    
     override func viewDidLoad() {
         getSavedPostData()
     }
@@ -38,8 +37,7 @@ final class PostViewModelImplementation: BaseViewModelImplementation, PostViewMo
     }
     
     private func checkItemIsAlreadySaved() -> Bool {
-        let data = readedItems.filter{ $0.name == self.name }
-        return  data.count > 0
+        return readedItems.filter{ $0.name == self.name }.count > 0
     }
     
     private func savePostAsReadInCoreData() {
@@ -48,6 +46,4 @@ final class PostViewModelImplementation: BaseViewModelImplementation, PostViewMo
         PersistenceService.saveContext()
     }
     
-
-
 }
