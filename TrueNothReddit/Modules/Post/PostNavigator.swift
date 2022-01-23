@@ -13,14 +13,4 @@ class PostNavigator : BaseNavigator{
         return view?.navigationController
     }
 
-    enum Destination {
-    }
-
-    func navigate(to destination: PostNavigator.Destination) {
-        switch destination {
-        default:
-//            uncoment next line
-            print("")
-        }
-    }
 }

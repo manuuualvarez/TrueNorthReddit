@@ -8,8 +8,8 @@
 import Foundation
 
 class PostBuilder {
-    static func build(url: String) -> PostViewController {
-        let viewModel = PostViewModelImplementation(url: url)
+    static func build(url: String, name: String) -> PostViewController {
+        let viewModel = PostViewModelImplementation(url: url, name: name)
         let controller = PostViewController()
         let navigator = PostNavigator()
 

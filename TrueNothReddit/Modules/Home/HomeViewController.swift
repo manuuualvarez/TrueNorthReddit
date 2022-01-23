@@ -20,8 +20,6 @@ class HomeViewController: BaseViewController {
 //    MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Height = \(self.view.frame.height)")
-        print("Widt = \(self.view.frame.width)")
         setUpNavigationBar()
         setUpTableData()
         bind()
@@ -71,6 +69,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = viewModel.tableNewsData.value
         let newsCell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! NewsTableViewCell
+        newsCell.delegate = self
         newsCell.configurationCell(news: data[indexPath.row])
         
         newsCell.sizeToFit()
@@ -99,4 +98,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.goToPost(index: indexPath.row)
     }
+}
+
+extension HomeViewController: ImageDidTouch {
+    func imageDidTouch(image: UIImage) {
+        viewModel.savePhotoInGallery(image: image)
+    }
+    
+    
 }
