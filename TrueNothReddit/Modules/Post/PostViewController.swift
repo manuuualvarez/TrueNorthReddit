@@ -22,6 +22,7 @@ class PostViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         webViewConfiguration()
+        self.restorationIdentifier = "PostViewController"
     }
     
 //    MARK: - Methods:
@@ -47,4 +48,17 @@ class PostViewController: BaseViewController {
 
 extension PostViewController: UIWebViewDelegate, WKUIDelegate {
     
+}
+
+extension PostViewController {
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
+        coder.encode(webView.scrollView.contentOffset.y, forKey: "webView.contentOffset.y")
+    }
+    
+    override func decodeRestorableState(with coder: NSCoder) {
+        if let webViewY = coder.decodeObject(forKey: "webView.contentOffset.y") as? CGFloat {
+            webView.scrollView.contentOffset.y = webViewY
+        }
+    }
 }

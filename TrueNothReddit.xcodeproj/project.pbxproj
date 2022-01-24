@@ -14,7 +14,6 @@
 		FE13D092279AFAB90074A131 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13D091279AFAB90074A131 /* DataModels.swift */; };
 		FE13D095279B09D30074A131 /* newsLoader.json in Resources */ = {isa = PBXBuildFile; fileRef = FE13D094279B09D30074A131 /* newsLoader.json */; };
 		FE16FE87279A1FF30008B0D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE16FE86279A1FF30008B0D1 /* AppDelegate.swift */; };
-		FE16FE89279A1FF30008B0D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE16FE88279A1FF30008B0D1 /* SceneDelegate.swift */; };
 		FE16FE90279A1FF40008B0D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE16FE8F279A1FF40008B0D1 /* Assets.xcassets */; };
 		FE16FE93279A1FF40008B0D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE16FE91279A1FF40008B0D1 /* LaunchScreen.storyboard */; };
 		FE3D0106279A2C4100E4017F /* HomeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3D0101279A2C4100E4017F /* HomeNavigator.swift */; };
@@ -54,7 +53,6 @@
 		FE13D094279B09D30074A131 /* newsLoader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newsLoader.json; sourceTree = "<group>"; };
 		FE16FE83279A1FF30008B0D1 /* TrueNothReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrueNothReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE16FE86279A1FF30008B0D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FE16FE88279A1FF30008B0D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FE16FE8F279A1FF40008B0D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE16FE92279A1FF40008B0D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE16FE94279A1FF40008B0D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 				FEA5B260279A282100336B2B /* Modules */,
 				FEA5B259279A24CA00336B2B /* Helpers */,
 				FE16FE86279A1FF30008B0D1 /* AppDelegate.swift */,
-				FE16FE88279A1FF30008B0D1 /* SceneDelegate.swift */,
 				FE16FE8F279A1FF40008B0D1 /* Assets.xcassets */,
 				FE16FE91279A1FF40008B0D1 /* LaunchScreen.storyboard */,
 				FE16FE94279A1FF40008B0D1 /* Info.plist */,
@@ -362,7 +359,6 @@
 				FEA5B251279A219C00336B2B /* BaseClases.swift in Sources */,
 				FE75054B279DCC830045B1D3 /* TrashedEntity+CoreDataProperties.swift in Sources */,
 				FE16FE87279A1FF30008B0D1 /* AppDelegate.swift in Sources */,
-				FE16FE89279A1FF30008B0D1 /* SceneDelegate.swift in Sources */,
 				FEA5B255279A224F00336B2B /* LoaderAnimator.swift in Sources */,
 				FE750549279DA0730045B1D3 /* PostEntity+CoreDataProperties.swift in Sources */,
 			);

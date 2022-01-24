@@ -29,6 +29,7 @@ protocol HomeViewModel: BaseViewModel {
 
 
 final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewModel {
+    
 
 //    MARK: Properties
     var navigator: HomeNavigator?
@@ -39,16 +40,18 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
 
 //    MARK: Service
     var redditServices = RedditService()
+    private var needToReload: Bool = true
+    
+
     
 //    MARK: Life cycle
     override func viewDidLoad() {
-        deleteAllCoreData()
         fetchRedditData()
-        showSettingsBtn()
     }
     
     override func viewWillAppear() {
         getSavedPostDataAndCheckIfReadOrDeleted(isFromNextPage: false, isWithMemoryData: true)
+        showSettingsBtn()
     }
     
 //    MARK: Methods
@@ -119,15 +122,17 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
         var postArray: [Child] = []
 
         if !isWithMemoryData {
-             postArray = data.map{ element -> Child in
+             postArray = data.map{ (element) -> Child in
                 var post: Child = element
-                post.data?.isRead = readedItems.filter{ $0.name == element.data?.name }.count > 0
+                let isRead = readedItems.contains{ $0.name == post.data?.name }
+                post.data?.isRead = isRead
                 return post
             }
         } else {
-            postArray = tableNewsData.value.map{ element -> Child in
+            postArray = tableNewsData.value.map{ (element) -> Child in
                 var post: Child = element
-                post.data?.isRead = readedItems.filter{ $0.name == element.data?.name }.count > 0
+                let isRead = readedItems.contains{ $0.name == post.data?.name }
+                post.data?.isRead = isRead
                 return post
             }
         }
@@ -142,6 +147,10 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
             tableNewsData.value.append(contentsOf: postArray)
         } else {
             tableNewsData.value = postArray
+        }
+        
+        if postArray.count == 0 {
+            getDataFromNextPage()
         }
     }
     
@@ -186,7 +195,7 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
         PersistenceService.deleteAllData(.postReadEntity)
         PersistenceService.saveContext()
         showSettingsBtn()
-        getDataFromNextPage()
+        fetchRedditData()
     }
     
     private func showSettingsBtn() {
@@ -196,7 +205,7 @@ final class HomeViewModelImplementation: BaseViewModelImplementation, HomeViewMo
     func clearCoreDataDidTouch() {
         deleteAllCoreData()
     }
-    
+        
 //    MARK: Navigation
     
     func goToPost(index: Int) {

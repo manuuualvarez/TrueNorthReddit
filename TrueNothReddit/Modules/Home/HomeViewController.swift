@@ -23,6 +23,7 @@ class HomeViewController: BaseViewController {
         setUpNavigationBar()
         setUpTableData()
         bind()
+        self.restorationIdentifier = "HomeViewController"
     }
     
 //  MARK: - Observers
@@ -142,5 +143,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 extension HomeViewController: ImageDidTouch {
     func imageDidTouch(image: UIImage) {
         viewModel.savePhotoInGallery(image: image)
+    }
+}
+
+extension HomeViewController {
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
+        coder.encode(tableView.contentOffset.y, forKey: "tableView.contentOffset.y")
+    }
+    
+    override func decodeRestorableState(with coder: NSCoder) {
+        if let tableViewY = coder.decodeObject(forKey: "tableView.contentOffset.y") as? CGFloat {
+            tableView.contentOffset.y = tableViewY
+        }
     }
 }
