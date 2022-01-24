@@ -10,7 +10,7 @@ import UIKit.UIView
 import Lottie
 
 protocol LoaderAnimator {
-    func show(view: UIView)
+    func show(view: UIView, name: AnimationType)
     func hide()
 }
 
@@ -21,12 +21,33 @@ final class LoaderAnimatorAdapter: LoaderAnimator {
     private var isLoaderPresented = false
     private var containerView: AnimationView?
     
-    public func show(view: UIView){
+    public func show(view: UIView, name: AnimationType){
+        
+        var loopMode: LottieLoopMode = .loop
+        if name == .removeLoader {
+            loopMode = .playOnce
+        }
+        
         if !isLoaderPresented {
             view.isUserInteractionEnabled = false
             let background = UIView(frame: UIScreen.main.bounds)
             background.backgroundColor = .backgroundLoader
-            containerView = LottieAnimationBuilder.createAnimation(contentMode: .scaleAspectFit, loopMode: .loop, animationName: "newsLoader")
+            containerView = LottieAnimationBuilder.createAnimation(contentMode: .scaleAspectFit, loopMode: loopMode, animationName: name.rawValue)
+            containerView?.frame.size = CGSize(width: background.frame.size.width / 2, height: background.frame.size.height / 2)
+            containerView?.frame =  UIScreen.main.bounds
+            background.addSubview(containerView!)
+            view.addSubview(background)
+            isLoaderPresented = true
+            containerView?.play()
+        }
+    }
+    
+    public func showRemove(view: UIView, name: AnimationType){
+        if !isLoaderPresented {
+            view.isUserInteractionEnabled = false
+            let background = UIView(frame: UIScreen.main.bounds)
+            background.backgroundColor = .backgroundLoader
+            containerView = LottieAnimationBuilder.createAnimation(contentMode: .scaleAspectFit, loopMode: .loop, animationName: name.rawValue)
             containerView?.frame.size = CGSize(width: background.frame.size.width / 2, height: background.frame.size.height / 2)
             containerView?.frame =  UIScreen.main.bounds
             background.addSubview(containerView!)

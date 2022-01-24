@@ -8,9 +8,15 @@
 import Foundation
 import UIKit
 
-    // MARK: - Base ViewController
+enum AnimationType: String {
+    case loader = "newsLoader"
+    case removeLoader = "removeAnimation"
+}
 
+    // MARK: - Base ViewController
 class BaseViewController: UIViewController {
+    
+    var animationName: AnimationType = .loader
     
     var baseViewModel: BaseViewModel?  {
         return nil
@@ -41,9 +47,9 @@ class BaseViewController: UIViewController {
     }
     
     private func showLoadingView() {
-        loaderAnimator.show(view: self.view)
+        loaderAnimator.show(view: self.view, name: baseViewModel?.animationName ?? .loader )
     }
-    
+
     private func hideLoadingView() {
         self.loaderAnimator.hide()
     }
@@ -62,10 +68,13 @@ protocol BaseViewModel {
     func viewDidAppear()
     func viewWillAppear()
     var isLoadingObservable: TrueNorthObservableWhenValueChange<Bool> { get }
+    var animationName: AnimationType { get }
 }
 
 class BaseViewModelImplementation: NSObject, BaseViewModel {
     var isLoadingObservable = TrueNorthObservableWhenValueChange<Bool>(false)
+    
+    var animationName: AnimationType = .loader
     
     func viewWillAppear() {}
     func viewDidLoad() {}
